@@ -11,9 +11,23 @@ namespace geocomplex.ViewModels
     internal class RegistrationWindowViewModel:ViewModel
     {
 
+        #region Логин
+        /// <summary>
+        /// Логин пользователя
+        /// </summary>
+        private string login;
 
+        public string Login { get => login; set => Set(ref login, value);}
+        #endregion
 
+        #region Пароль
+        /// <summary>
+        /// Пароль пользователя
+        /// </summary>
+        private string password;
 
+        public string Password { get => password; set => Set(ref password, value);}
+        #endregion
 
 
 
@@ -30,7 +44,7 @@ namespace geocomplex.ViewModels
 
             #endregion
 
-               // ищем в базе данных пользователя с такими данными     
+              // ищем в базе данных пользователя с такими данными     
 
                     //string cmd = $"SELECT * FROM user_data WHERE user_login='{TextBoxLogin.Text}'"; // Создаем запрос для вывода 
                     //NpgsqlCommand createCommand = new NpgsqlCommand(cmd, connection); // ложим запрос в команду и подключение к бд
@@ -45,6 +59,7 @@ namespace geocomplex.ViewModels
                     //    main.Show();
                     //    connection.Close();
                     //}
+
 
 
 

@@ -45,6 +45,7 @@
                  HorizontalAlignment="Center"
                  Style="{DynamicResource StyleTex}"
                  Margin="0,5"
+                 Text="{Binding Login}"
                  />
             </StackPanel>
             <StackPanel >
@@ -64,6 +65,7 @@
                  HorizontalAlignment="Center"
                  Style="{DynamicResource StyleTex}"
                  Margin="0,5"
+                 Text="{Binding Password}"
                  />
             </StackPanel>
         </StackPanel>
