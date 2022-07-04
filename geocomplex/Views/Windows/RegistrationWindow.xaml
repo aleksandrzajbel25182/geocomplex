@@ -3,66 +3,78 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-
         xmlns:local="clr-namespace:geocomplex"
-        
+        xmlns:vm="clr-namespace:geocomplex.ViewModels"
         mc:Ignorable="d"
-        Title="Регистрация" Height="360" Width="500" Background="#DFE7DD">
+
+        Title="Регистрация"
+        Height="300" Width="350" Background="#DFE7DD">
+
+    <Window.DataContext>
+        <vm:RegistrationWindowViewModel/>
+    </Window.DataContext>
+
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="83*"/>
-            <ColumnDefinition Width="40*"/>
-        </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="75*"/>
-            <RowDefinition Height="145*"/>
-            <RowDefinition Height="109*" />
+            <RowDefinition Height="39*"/>
+            <RowDefinition Height="156*"/>
+          
         </Grid.RowDefinitions>
-        <Label  Content="ГЕОКОМПЛЕКС" 
-                VerticalAlignment="Center" 
+        <Label  Grid.Row="0"
+                Content="ГЕОКОМПЛЕКС" 
+                VerticalAlignment="Center"
                 HorizontalAlignment="Center"
                 FontSize="25"
-                FontFamily="Arvo" Grid.ColumnSpan="2" Margin="138,17"/>
-        <Label Grid.Row="1"
+                FontFamily="Arvo" Height="39" Margin="62,0" Width="218" 
+                />
+        <StackPanel  Grid.Row="1">
+            <StackPanel>
+                 <Label 
                Content="Логин"
                HorizontalAlignment="Center" 
-               Width="auto" Height="34" 
-               
                VerticalAlignment="Top"
-              Style="{DynamicResource StyleLabel}" Margin="211,0,51,0"/>
-        <Label Grid.Row="1"
+               Style="{DynamicResource StyleLabel}" 
+              
+                  />
+
+                <TextBox Name="TextBoxLogin"
+                 Grid.Row="1"
+                 Width="200"
+                 VerticalAlignment="Top"
+                 HorizontalAlignment="Center"
+                 Style="{DynamicResource StyleTex}"
+                 Margin="0,5"
+                 />
+            </StackPanel>
+            <StackPanel >
+
+               <Label 
                Content="Пароль"
                HorizontalAlignment="Center" 
-               Width="auto" Height="33" 
-   
                VerticalAlignment="Bottom"
-              Style="{DynamicResource StyleLabel}" Margin="208,0,48,52"/>
+               Style="{DynamicResource StyleLabel}"
+                  />
 
 
-
-
-
-
-        <TextBox Name="TextBoxLogin"
+                <TextBox Name="TextBoxPassword"
                  Grid.Row="1"
                  Width="200"
-                 
-                 VerticalAlignment="Top"
-                 HorizontalAlignment="Center" 
-                 Grid.ColumnSpan="2"
-                 Style="{DynamicResource StyleTex}" Margin="146,35,146,0"
+                 VerticalAlignment="Bottom" 
+                 HorizontalAlignment="Center"
+                 Style="{DynamicResource StyleTex}"
+                 Margin="0,5"
                  />
-        <TextBox Name="TextBoxPassword"
-                 Grid.Row="1"
-                 Width="200"
-                 Height="20" Margin="0,95,146,0" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.ColumnSpan="2"
-                 />
-
+            </StackPanel>
+        </StackPanel>
         <Button Content="Вход"
                 Grid.Row="2"
-                Width="150"
-                Height="40" Click="Button_Click"
-                Style="{DynamicResource StyleButton}" Margin="171,34,11,35"/>
+                Height="40"
+                Style="{DynamicResource StyleButton}" 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Margin="20"
+                />
 
 
 

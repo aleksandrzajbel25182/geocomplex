@@ -14,6 +14,9 @@ namespace geocomplex.ViewModels
 
 
 
+
+
+
         private string connstring = @"Server=localhost;Port=5432; User Id=postgres;Password=admin; Database=Geocomplex;";
 
         private NpgsqlConnection connection;
