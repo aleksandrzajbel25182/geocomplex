@@ -54,54 +54,54 @@ namespace geocomplex
         private void Source()
         {
 
-            try
-            {
-                #region Подлключение к БД
+            //try
+            //{
+            //    #region Подлключение к БД
 
                 
-                connection.Open();
-                string cmd = "SELECT * FROM test_table"; // Создаем запрос для вывода 
-                NpgsqlCommand createCommand = new NpgsqlCommand(cmd, connection); // ложим запрос в команду и подключение к бд
-                createCommand.ExecuteNonQuery();
+            //    connection.Open();
+            //    string cmd = "SELECT * FROM test_table"; // Создаем запрос для вывода 
+            //    NpgsqlCommand createCommand = new NpgsqlCommand(cmd, connection); // ложим запрос в команду и подключение к бд
+            //    createCommand.ExecuteNonQuery();
 
-                NpgsqlDataAdapter dataAdp = new NpgsqlDataAdapter(createCommand);
-                DataTable dt = new DataTable("test_table"); // В скобках указываем название таблицы
-                dataAdp.Fill(dt);
-                Personal.ItemsSource = null;
-                Personal.ItemsSource = dt.DefaultView; // Сам вывод 
-                connection.Close();
+            //    NpgsqlDataAdapter dataAdp = new NpgsqlDataAdapter(createCommand);
+            //    DataTable dt = new DataTable("test_table"); // В скобках указываем название таблицы
+            //    dataAdp.Fill(dt);
+            //    Personal.ItemsSource = null;
+            //    Personal.ItemsSource = dt.DefaultView; // Сам вывод 
+            //    connection.Close();
 
-                #endregion
+            //    #endregion
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-                connection.Close();
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error: " + ex.Message);
+            //    connection.Close();
+            //}
                 
 
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                connection.Open();
-                string cmd = "INSERT INTO test_table(test_string, test_string2)values(@t1,@t2)";
-                NpgsqlCommand createCommand = new NpgsqlCommand(cmd, connection);
+            //try
+            //{
+            //    connection.Open();
+            //    string cmd = "INSERT INTO test_table(test_string, test_string2)values(@t1,@t2)";
+            //    NpgsqlCommand createCommand = new NpgsqlCommand(cmd, connection);
 
-                createCommand.Parameters.AddWithValue("@t1", text1.Text);
-                createCommand.Parameters.AddWithValue("@t2", text2.Text);
-                createCommand.ExecuteNonQuery();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
+            //    createCommand.Parameters.AddWithValue("@t1", text1.Text);
+            //    createCommand.Parameters.AddWithValue("@t2", text2.Text);
+            //    createCommand.ExecuteNonQuery();
+            //    connection.Close();
+            //}
+            //catch (Exception ex)
+            //{
 
-                MessageBox.Show("Error: " + ex.Message);
-                connection.Close();
-            }
+            //    MessageBox.Show("Error: " + ex.Message);
+            //    connection.Close();
+            //}
            
 
         }
