@@ -13,24 +13,13 @@ namespace geocomplex.ViewModels
 
     {
         /// <summary>
-        /// Конструктор  MainWindowViewModel
+        /// Список всех возможных загрузчиков пар View и ViewModel
         /// </summary>
-        
-        public MainWindowViewModel(IEnumerable<IModule> modules)
-        {
-            Modules = modules.OrderBy(m => m.Name).ToList();
-            if (this.Modules.Count > 0)
-            {
-                SelectedModule = this.Modules[0];
-            }
-        }
-
-
-        //Properties
-
         public List<IModule> Modules { get; private set; }
 
-
+        /// <summary>
+        /// Выбранная и загруженная парочка View и ViewModel
+        /// </summary>
         private IModule _SelectedModule;
         public IModule SelectedModule
         {
@@ -45,12 +34,28 @@ namespace geocomplex.ViewModels
             }
         }
 
+        /// <summary>
+        /// То, что отображает View через ContentPresenter 
+        /// </summary>
         public UserControl UserInterface
         {
             get
             {
                 if (SelectedModule == null) return null;
                 return SelectedModule.UserInterface;
+            }
+        }
+
+        /*----------------------------------------------------------------------------------*/
+        /// <summary>
+        /// Конструктор  MainWindowViewModel
+        /// </summary>
+        public MainWindowViewModel(IEnumerable<IModule> modules)
+        {
+            Modules = modules.OrderBy(m => m.Name).ToList();
+            if (this.Modules.Count > 0)
+            {
+                SelectedModule = this.Modules[0];
             }
         }
 
