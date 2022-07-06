@@ -16,8 +16,19 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="1214"/>
         </Grid.ColumnDefinitions>
-
-        <Frame Grid.Column="1" Grid.Row="1"/>
+        <ListBox Grid.Column="0" Grid.Row="1"
+                 ItemsSource="{Binding Modules}" 
+                 SelectedItem="{Binding SelectedModule, Mode=TwoWay}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ContentPresenter x:Name="contentPresenter"
+                          Grid.Column="1"
+                          Grid.Row="1"
+                          Content="{Binding UserInterface}"/>
 
     </Grid>
 

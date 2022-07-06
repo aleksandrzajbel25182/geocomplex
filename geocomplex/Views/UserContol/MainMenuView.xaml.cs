@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace geocomplex.Pages
+namespace geocomplex.Views.UserContol
 {
     /// <summary>
-    /// Логика взаимодействия для MainMenuPage.xaml
+    /// Логика взаимодействия для MainMenuView.xaml
     /// </summary>
-    public partial class MainMenuPage : Page
+    public partial class MainMenuView : UserControl
     {
-        public MainMenuPage()
+        public MainMenuView()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

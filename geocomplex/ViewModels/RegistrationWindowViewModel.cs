@@ -1,4 +1,5 @@
 ﻿using geocomplex.Infrastructure.Commands;
+using geocomplex.Service.Utils;
 using geocomplex.ViewModels.Base;
 using Npgsql;
 using System;
@@ -70,10 +71,19 @@ namespace geocomplex.ViewModels
            
             if (dt.Rows.Count > 0) // если такая запись существует       
             {
-                MainWindow main = new MainWindow();
-                main.Show();
                 connection.Close();
                
+               
+               
+                var mainWindow = new MainWindow();
+
+                var modules = ReflectionHelper.CreateAllInstancesOf<IModule>();
+
+                var vm = new MainWindowViewModel(modules);
+                mainWindow.DataContext = vm;
+                mainWindow.Closing += (s, args) => vm.SelectedModule.Deactivate();
+                mainWindow.Show();
+
             }
         }
 
