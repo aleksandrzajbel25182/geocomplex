@@ -4,27 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:geocomplex"
+        xmlns:us="clr-namespace:geocomplex.UserContols"
         mc:Ignorable="d"
         Title="MainWindow" Height="768" Width="1366
         ">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="646"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="737"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="1214"/>
         </Grid.ColumnDefinitions>
-        <ListBox Grid.Column="0" Grid.Row="1"
-                 ItemsSource="{Binding Modules}" 
-                 SelectedItem="{Binding SelectedModule, Mode=TwoWay}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding Name}" />
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <us:HamburgerMenu Grid.Column="0" Grid.Row="1"/>
+
+
         <ContentPresenter x:Name="contentPresenter"
                           Grid.Column="1"
                           Grid.Row="1"

@@ -11,10 +11,9 @@ namespace geocomplex.Views.UserContol
 {
     class MainMenu :ModuleBase
     {
-        public override string Name
-        {
-            get { return "MainMenu"; }
-        }
+        public override string Name => "Домой";
+        
+        public override string ImagePath => "/Icons/Домой.ico";
 
         protected override UserControl CreateViewAndViewModel()
         {

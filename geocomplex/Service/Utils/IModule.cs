@@ -14,6 +14,10 @@ namespace geocomplex.Service.Utils
         /// </summary>
         string Name { get; }
         /// <summary>
+        /// Ссылка на иконку
+        /// </summary>
+        string ImagePath { get; }
+        /// <summary>
         /// Ссылка на вьюшку
         /// </summary>
         UserControl UserInterface { get; }

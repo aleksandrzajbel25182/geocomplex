@@ -14,7 +14,7 @@ namespace geocomplex.Service.Utils
         protected abstract UserControl CreateViewAndViewModel();
 
         public abstract string Name { get; }
-
+        public abstract string ImagePath { get; }
         public UserControl UserInterface
         {
             get
