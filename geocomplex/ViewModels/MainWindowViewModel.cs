@@ -57,7 +57,26 @@ namespace geocomplex.ViewModels
             {
                 SelectedModule = this.Modules[0];
             }
+            Mediator.Subscribe("GoToMainMenu", OnGoMainMenu);
+            Mediator.Subscribe("GoToPolevoiDnevnik", OnGoPolevoiDnevnik);
+                
         }
+
+
+
+        private void OnGoMainMenu(object obj)
+        {
+            SelectedModule = this.Modules[0]; // Домой -- MainMenu
+        }
+
+        private void OnGoPolevoiDnevnik(object obj)
+        {
+            SelectedModule = this.Modules[1]; // Полевой дневник --- Polev
+        }
+
+
+
+
 
 
 

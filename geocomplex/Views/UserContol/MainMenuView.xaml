@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:geocomplex.Views.UserContol"
              mc:Ignorable="d" 
-             d:DesignHeight="646" d:DesignWidth="1214"
+             d:DesignHeight="652" d:DesignWidth="1214"
                 >
     <Grid>
         <Grid.RowDefinitions>
@@ -21,7 +21,7 @@
             <Button 
                     Content="Полевой дневник"
                     Style="{DynamicResource StyleMenuButton}"
-            
+                    Command="{Binding GoToPolevoiDnevnikCommand}"
                     />
             <Button     Grid.Column="1"
                     Content="Каталог"
