@@ -108,6 +108,7 @@
     </ApplicationDefinition>
     <Compile Include="Infrastructure\Commands\Base\Command.cs" />
     <Compile Include="Infrastructure\Commands\LamdaCommand.cs" />
+    <Compile Include="Service\MessageService.cs" />
     <Compile Include="Service\RequestsClass.cs" />
     <Compile Include="Service\Utils\IModule.cs" />
     <Compile Include="Service\Utils\Mediator.cs" />
