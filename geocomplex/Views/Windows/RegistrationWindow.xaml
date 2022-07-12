@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:geocomplex"
         xmlns:vm="clr-namespace:geocomplex.ViewModels"
         mc:Ignorable="d"
-
+        WindowStartupLocation="CenterScreen"
         Title="Регистрация"
         Height="300" Width="350" Background="#DFE7DD" >
 

@@ -1,4 +1,5 @@
 ﻿using geocomplex.Infrastructure.Commands;
+using geocomplex.Service;
 using geocomplex.Service.Utils;
 using geocomplex.ViewModels.Base;
 using Npgsql;
@@ -82,6 +83,10 @@ namespace geocomplex.ViewModels
                mainWindow.Closing += (s, args) => vm.SelectedModule.Deactivate();
                mainWindow.Show();
 
+            }
+            else
+            {
+                MessageService.ShowMessage("Неправильно введен пароль или логин!");
             }
         }
 
