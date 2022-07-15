@@ -7,6 +7,50 @@
              mc:Ignorable="d" 
              d:DesignHeight="652" d:DesignWidth="1214">
     <Grid>
-        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Content="{Binding Lab}"/>
+        <StackPanel>
+            <TextBox MaxWidth="300"
+                     Margin="30"
+                     Text="Пример: ГГ-1000"/>
+            
+            <StackPanel Orientation="Horizontal">
+                
+                <Button Style="{DynamicResource ButtonAdd}"
+                        Margin="110,20,0,20"/>
+                <Button Style="{DynamicResource ButtonFile}"
+                         Margin="40,20,0,20"/>
+                <Button Style="{DynamicResource ButtonFile}"
+                         Margin="40,20,0,20"/>
+                <Button Style="{DynamicResource ButtonFile}"
+                         Margin="40,20,0,20"/>
+               
+            </StackPanel>
+            <DataGrid Name="Datagrid"
+                      Style="{DynamicResource DataGridStyle1}" 
+                      ItemsSource="{Binding Userdat}"
+                      AutoGenerateColumns="False" 
+                      Width="1000"
+                      Height="400"
+                      Margin="0,20,0,0"
+                      CanUserAddRows="False">
+                <DataGrid.Columns >
+                    <DataGridTextColumn Header="Id" 
+                                    Binding="{Binding UserId}"
+                                    MinWidth="120"
+                                    Width="*"/>
+                    <DataGridTextColumn Header="Фамилия" 
+                                    Binding="{Binding UserSurname}"
+                                    MinWidth="120"
+                                    Width="*"/>
+                    <DataGridTextColumn Header="Имя" 
+                                    Binding="{Binding UserName}" 
+                                    MinWidth="120"
+                                    Width="*"/>
+                    <DataGridTextColumn Header="Логин"
+                                    Binding="{Binding UserLogin}"
+                                    MinWidth="120"
+                                    Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
     </Grid>
 </UserControl>
