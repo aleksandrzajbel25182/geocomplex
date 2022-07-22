@@ -10,19 +10,40 @@
         <StackPanel>
             <TextBox MaxWidth="300"
                      Margin="30"
-                     Text="Пример: ГГ-1000"/>
+                     Text="Пример: ГГ-1d000" Cursor="Arrow"/>
             
             <StackPanel Orientation="Horizontal">
-                
-                <Button Style="{DynamicResource ButtonAdd}"
-                        Margin="110,20,0,20"/>
-                <Button Style="{DynamicResource ButtonFile}"
-                         Margin="40,20,0,20"/>
-                <Button Style="{DynamicResource ButtonFile}"
-                         Margin="40,20,0,20"/>
-                <Button Style="{DynamicResource ButtonFile}"
-                         Margin="40,20,0,20"/>
+
+                <Button Style="{StaticResource StyleCircleButton}"
+                        Margin="110,20,0,20"
+                        >
+                    <Image Source="/Icons/ActionIcons/Add.ico"
+                           Width="25"
+                           Height="25"/>
+                </Button>
+                <Button Style="{StaticResource StyleCircleButton}"
+                         Margin="40,20,0,20">
+                    <Image Source="/Icons/ActionIcons/Edit.ico"
+                           Width="25"
+                           Height="25"/>
+                    
+                </Button>
+                <Button Style="{StaticResource StyleCircleButton}"
+                         Margin="40,20,0,20">
+                    <Image Source="/Icons/ActionIcons/Copy.ico"
+                           Width="25"
+                           Height="25"/>
+                  
+                </Button>
+                <Button Style="{StaticResource StyleCircleButton}"
+                         Margin="40,20,0,20">
+                    <Image Source="/Icons/ActionIcons/Remove.ico"
+                           Width="25"
+                           Height="25"/>
+
+                </Button>
                
+
             </StackPanel>
             <DataGrid Name="Datagrid"
                       Style="{DynamicResource DataGridStyle1}" 
@@ -35,17 +56,17 @@
                 <DataGrid.Columns >
                     <DataGridTextColumn Header="Id" 
                                     Binding="{Binding UserId}"
-                                    MinWidth="120"
+                                    MinWidth="80"
                                     Width="*"/>
-                    <DataGridTextColumn Header="Фамилия" 
+                    <DataGridTextColumn Header="Наименование" 
                                     Binding="{Binding UserSurname}"
                                     MinWidth="120"
                                     Width="*"/>
-                    <DataGridTextColumn Header="Имя" 
+                    <DataGridTextColumn Header="Дата создания" 
                                     Binding="{Binding UserName}" 
                                     MinWidth="120"
                                     Width="*"/>
-                    <DataGridTextColumn Header="Логин"
+                    <DataGridTextColumn Header="Организация исполнитель"
                                     Binding="{Binding UserLogin}"
                                     MinWidth="120"
                                     Width="*"/>
